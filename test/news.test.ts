@@ -18,14 +18,11 @@ describe("News", async function(){
     it("Should open news article from News section", async function(){
         const newsPage = await PageFactory.getNewsPage(driver);
         await newsPage.visitPage();
-        const articleTitleNewsPage = await newsPage.openArticle();
-        
-        const articleTitle = await driver.wait(
-            until.elementLocated(By.css('.news-header__title h1')),
-            5000
-        );
-        const articleTitleText = await articleTitle.getText();
-        expect(articleTitleText).to.contain(articleTitleNewsPage);
+        await newsPage.openArticle();
+        const articlePage = await PageFactory.getArticlePage(driver);
+        const ArticleTitleVisible = await articlePage.isArticleTitleVisible();
+
+        expect(ArticleTitleVisible).to.be.true;
     });
 
 

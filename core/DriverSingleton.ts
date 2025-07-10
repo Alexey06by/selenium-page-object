@@ -5,7 +5,7 @@ export class DriverSingleton {
 
     static async getInstance(): Promise<WebDriver> {
         if(!this.driverInstance) {
-            this.driverInstance = await new Builder().forBrowser('chrome').build();
+            this.driverInstance = await new Builder().forBrowser('firefox').build();
             await this.driverInstance.manage().window().maximize();              
         }
         return this.driverInstance;

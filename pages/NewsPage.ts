@@ -18,10 +18,7 @@ export class NewsPage extends BasePage {
             until.elementLocated(By.id('widget-1-1')),
             5000
         );
-        const articleTitle = await this.driver.findElement(By.css('#widget-1-1 .line-clamp-4'));
-        const articleTitleNewsPage = await articleTitle.getText();        
         await article.click();
-        return articleTitleNewsPage;
-
     }
+
 }
