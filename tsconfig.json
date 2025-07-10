@@ -1,0 +1,9 @@
+{
+   "compilerOptions": {
+    "target": "ES2018",
+    "outDir": "dist",
+    "moduleResolution": "bundler",   
+    "esModuleInterop": true 
+   },
+   "include": ["core", "pages","test"]
+}
