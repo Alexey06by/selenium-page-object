@@ -1,6 +1,7 @@
 import { WebDriver } from "selenium-webdriver";
 import { NewsPage } from "./NewsPage";
 import { ArticlePage } from "./ArticlePage";
+import { CatalogItemPage } from "./CatalogItemPage";
 
 export class PageFactory {
     static async getNewsPage(driver:WebDriver){
@@ -8,6 +9,9 @@ export class PageFactory {
     }
     static async getArticlePage(driver:WebDriver){
         return new ArticlePage(driver);
-    }    
+    }  
+    static async getCatalogItemPage(driver:WebDriver){
+        return new CatalogItemPage(driver);
+    }      
 }
 

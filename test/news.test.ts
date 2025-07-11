@@ -20,10 +20,22 @@ describe("News", async function(){
         await newsPage.visitPage();
         await newsPage.openArticle();
         const articlePage = await PageFactory.getArticlePage(driver);
-        const ArticleTitleVisible = await articlePage.isArticleTitleVisible();
+        const articleTitleVisible = await articlePage.isArticleTitleVisible();
 
-        expect(ArticleTitleVisible).to.be.true;
+        expect(articleTitleVisible).to.be.true;
     });
 
+    it("Should open catalog item from News section", async function(){
+        const newsPage = await PageFactory.getNewsPage(driver);
+        await newsPage.visitPage();
+        await newsPage.openCatalogItem();
+        const catalogItemPage = await PageFactory.getCatalogItemPage(driver);
+        const catalogItemTitleVisible = await catalogItemPage.isItemTitleVisible();
+
+        expect(catalogItemTitleVisible).to.be.true;
+
+        const catalogItemUrl = await catalogItemPage.getCurrentUrlValue();
+        expect(catalogItemUrl).to.contain('catalog.onliner.by');
+    });    
 
 });

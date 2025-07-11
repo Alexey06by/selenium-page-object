@@ -21,4 +21,12 @@ export class NewsPage extends BasePage {
         await article.click();
     }
 
+    async openCatalogItem(){
+        const catalogItem = await this.driver.wait(
+            until.elementLocated(By.css('.catalog-offers__item:first-child .catalog-offers__image')),
+            5000
+        );
+        await article.click();
+    }
+
 }
