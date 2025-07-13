@@ -11,9 +11,9 @@ export class DriverSingleton {
         return this.driverInstance;
     }
 
-    static async close(): Promise<void> {
+    static async quit(): Promise<void> {
         if (this.driverInstance) {
-            await this.driverInstance.close();
+            await this.driverInstance.quit();
             this.driverInstance = null;
         }
     }
