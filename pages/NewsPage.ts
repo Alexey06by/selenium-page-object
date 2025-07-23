@@ -1,12 +1,14 @@
 import { WebDriver, By, until } from "selenium-webdriver"
 import { BasePage } from "./BasePage"
+import dotenv from 'dotenv';
+dotenv.config();
 
 export class NewsPage extends BasePage {
     private readonly url: string;
 
     constructor(driver: WebDriver) {
         super(driver);
-        this.url = "https://www.onliner.by/";
+        this.url = process.env.BASE_URL;
     }
 
     async visitPage(){
