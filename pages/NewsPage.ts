@@ -8,7 +8,7 @@ export class NewsPage extends BasePage {
 
     constructor(driver: WebDriver) {
         super(driver);
-        this.url = process.env.BASE_URL;
+        this.url = process.env.BASE_URL || "";
     }
 
     async visitPage(){
